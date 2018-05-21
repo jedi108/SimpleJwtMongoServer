@@ -12,7 +12,8 @@ func configServices() {
 	cfg := config.New()
 	err := cfg.FileNameFromArgs(os.Args)
 	if err != nil {
-		panic(err)
+		cfg.FileName = "prod.json"
+		// panic(err)
 	}
 
 	err = cfg.LoadFromFile()
